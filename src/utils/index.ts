@@ -13,4 +13,23 @@ export default class Utils {
             return v.toString(16);
         });
     }
+
+    public static GenerateRandom(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    public static GetType(target: any, mode?: string): string {
+        if (!mode) {
+            return Object.prototype.toString.call(target);
+        } else {
+            switch (mode.toUpperCase()) {
+                case "FULL":
+                    return Object.prototype.toString.call(target);
+                case "SHORT":
+                    return Object.prototype.toString.call(target).slice(8, -1);
+                default:
+                    return Object.prototype.toString.call(target);
+            }
+        }
+    }
 }

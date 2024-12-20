@@ -2,6 +2,9 @@ export default class Canvas {
     #nodeParent: null | HTMLElement | Element;
     #nodeCanvas: null | HTMLCanvasElement;
 
+    // Event
+    #eventResize: Function | null;
+
     constructor(nodeId: string) {
         switch (true) {
             case nodeId.includes("#"):
@@ -20,7 +23,11 @@ export default class Canvas {
 
         this.#nodeCanvas = document.createElement("canvas");
         this.#nodeCanvas.setAttribute("id", "MiO-Animations-Canvas");
+
+        this.#eventResize = null;
+
         this.#initialize();
+        this.#initializeEvent();
     }
 
     #initialize(): void {
@@ -37,6 +44,17 @@ export default class Canvas {
             this.#nodeCanvas.width = this.#nodeParent.clientWidth;
             this.#nodeCanvas.height = this.#nodeParent.clientHeight;
         }
+    }
+
+    #initializeEvent(): void {
+        this.#eventResize = (): void => {
+            if (this.#nodeParent && this.#nodeCanvas) {
+                this.#nodeCanvas.width = this.#nodeParent.clientWidth;
+                this.#nodeCanvas.height = this.#nodeParent.clientHeight;
+            }
+        };
+
+        window.addEventListener("resize", this.#eventResize.bind(this));
     }
 
     public getNode(): HTMLCanvasElement {
@@ -58,5 +76,13 @@ export default class Canvas {
                     return false;
             }
         }
+    }
+
+    public initialize(): void {
+        this.#initializeEvent();
+    }
+
+    public dispose(): void {
+        window.removeEventListener("resize", this.#eventResize as EventListenerOrEventListenerObject);
     }
 }
