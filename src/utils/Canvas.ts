@@ -19,6 +19,7 @@ export default class Canvas {
         }
 
         this.#nodeCanvas = document.createElement("canvas");
+        this.#nodeCanvas.setAttribute("id", "MiO-Animations-Canvas");
         this.#initialize();
     }
 
@@ -36,6 +37,10 @@ export default class Canvas {
             this.#nodeCanvas.width = this.#nodeParent.clientWidth;
             this.#nodeCanvas.height = this.#nodeParent.clientHeight;
         }
+    }
+
+    public getNode(): HTMLCanvasElement {
+        return this.#nodeCanvas as HTMLCanvasElement;
     }
 
     public getContext(type: string): CanvasRenderingContext2D | WebGLRenderingContext | WebGL2RenderingContext | null | boolean {
