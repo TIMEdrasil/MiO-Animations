@@ -7,15 +7,13 @@ const app = createApp({
             label: {
                 "en-US": "切换到中文",
                 "zh-CN": "Switch to English"
-            },
-            constellation: null
+            }
         }
     },
     template: `
-        <div class="mio-animations-examples">
+        <div class="mio-animations-showcase">
             <button @click="handleClick">{{ label[lang] }}</button>
-            <div class="mio-animations-examples-divider"></div>
-            <div class="mio-animation-examples-constellation"></div>
+            <div class="mio-animations-showcase-divider"></div>
         </div>
     `,
     methods: {
@@ -23,9 +21,7 @@ const app = createApp({
             this.lang = this.lang === "en-US" ? "zh-CN" : "en-US";
         }
     },
-    mounted() {
-        this.constellation = new MiOAnimations.MiOConstellation(".mio-animation-examples-constellation")
-    }
+    mounted() {}
 });
 
 app.mount('#MiO-Animations');

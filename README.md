@@ -8,7 +8,7 @@ TypeScript + Vue 3.0 + Rollup
 ```
 Dependencies installation: npm install
 
-Local debugging: npm run serve --projectName=[project name under examples]
+Local debugging: npm run serve --projectName=[project name under showcase]
 
 Packaging: npm run build
 ```

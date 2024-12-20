@@ -4,7 +4,7 @@ import plugin_babel from "@rollup/plugin-babel";
 import plugin_serve from "rollup-plugin-serve";
 import plugin_typescript from "@rollup/plugin-typescript";
 
-const PROJECT_BASE = process.env.npm_config_projectName ? "examples/" + process.env.npm_config_projectName : "static";
+const PROJECT_BASE = process.env.npm_config_projectName ? "showcase/" + process.env.npm_config_projectName : "static";
 
 export default {
     input: "src/index.ts",
