@@ -1,12 +1,12 @@
-import MiOConstellation from "./mio-constellation";
+import Constellation from "./mio-constellation";
 
 const MiOAnimations = {
-    MiOConstellation
+    Constellation
 };
 
 export default MiOAnimations;
 
 // @ts-ignore
 window.MiOAnimations = {
-    MiOConstellation
+    Constellation
 }
