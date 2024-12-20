@@ -1,0 +1,15 @@
+node_modules
+static/dist
+examples/*/dist
+**/*.map
+
+# Editor directories and files
+.editorconfig
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+directoryList.md
