@@ -89,6 +89,9 @@ this.MiOAnimations = (function () {
         static GenerateRandom(min, max) {
             return Math.floor(Math.random() * (max - min)) + min;
         }
+        static GenerateRandomSign() {
+            return Math.random() < 0.5 ? -1 : 1;
+        }
         static GetType(target, mode) {
             if (!mode) {
                 return Object.prototype.toString.call(target);
@@ -155,8 +158,8 @@ this.MiOAnimations = (function () {
             // set configs
             this.#radius = Math.random() + Utils.GenerateRandom(1, 3);
             this.#velocity = 0.1;
-            this.#velocityX = this.#velocity - Math.random() * 0.5;
-            this.#velocityY = this.#velocity - Math.random() * 0.5;
+            this.#velocityX = Utils.GenerateRandomSign() * (this.#velocity - Math.random() * 0.5);
+            this.#velocityY = Utils.GenerateRandomSign() * (this.#velocity - Math.random() * 0.5);
             this.#positionX = Math.random() * this.#canvas.width;
             this.#positionY = Math.random() * this.#canvas.height;
             this.draw();
@@ -267,7 +270,7 @@ this.MiOAnimations = (function () {
                 }
                 else if (star.positionY < 0 || star.positionY > this.#canvas.getNode().height) {
                     star.velocityX = star.velocityX;
-                    star.velocityY = -star.positionY;
+                    star.velocityY = -star.velocityY;
                 }
                 star.positionX += star.velocityX;
                 star.positionY += star.velocityY;

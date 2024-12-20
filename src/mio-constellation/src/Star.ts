@@ -59,8 +59,8 @@ export default class Star {
         // set configs
         this.#radius = Math.random() + Utils.GenerateRandom(1, 3);
         this.#velocity = 0.1;
-        this.#velocityX = this.#velocity - Math.random() * 0.5;
-        this.#velocityY = this.#velocity - Math.random() * 0.5;
+        this.#velocityX = Utils.GenerateRandomSign() * (this.#velocity - Math.random() * 0.5);
+        this.#velocityY = Utils.GenerateRandomSign() * (this.#velocity - Math.random() * 0.5);
         this.#positionX = Math.random() * this.#canvas.width;
         this.#positionY = Math.random() * this.#canvas.height;
 

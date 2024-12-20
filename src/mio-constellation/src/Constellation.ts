@@ -87,7 +87,7 @@ import Line from "./Line";
                  star.velocityY = star.velocityY;
              } else if (star.positionY < 0 || star.positionY > this.#canvas.getNode().height) {
                  star.velocityX = star.velocityX;
-                 star.velocityY = - star.positionY;
+                 star.velocityY = - star.velocityY;
              }
 
              star.positionX += star.velocityX;

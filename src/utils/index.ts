@@ -18,6 +18,10 @@ export default class Utils {
         return Math.floor(Math.random() * (max - min)) + min;
     }
 
+    public static GenerateRandomSign(): number {
+        return Math.random() < 0.5 ? -1 : 1;
+    }
+
     public static GetType(target: any, mode?: string): string {
         if (!mode) {
             return Object.prototype.toString.call(target);
