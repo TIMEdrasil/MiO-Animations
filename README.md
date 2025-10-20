@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/npm/l/mio-ui.svg?style=flat-square)](https://github.com/TIMEdrasil/MiO-Animations/blob/main/LICENSE)
 [![github stars](https://img.shields.io/github/stars/TIMEdrasil/MiO-Animations?style=flat-square)](https://github.com/TIMEdrasil/MiO-Animations/stargazers)
 
-**English** | [中文](./README_zh.md)
+**English** | [中文](./README.zh-CN.md)
 
  A lightweight and high-performance animation library for the modern web, designed to create beautiful constellation effects.
 ---
