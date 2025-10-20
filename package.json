@@ -1,16 +1,50 @@
 {
-    "name": "mio-animations",
-    "version": "1.0.0",
-    "description": "",
+    "name": "@timedrasil/mio-animations",
+    "version": "0.1.0",
+    "description": "A lightweight and high-performance animation library for the modern web, designed to create beautiful constellation effects",
+    "author": {
+        "name": "TIMEdrasil",
+        "email": "Business.Jiahe.Lin@gmail.com"
+    },
+    "license": "MIT",
+    "type": "module",
     "scripts": {
         "eslint-fix": "eslint --fix",
         "serve": "rollup -w -c rollup.dev.config.js",
-        "build": "rollup -c rollup.build.config.js"
+        "build": "rollup -c rollup.build.config.js",
+        "prepublishOnly": "npm run build"
     },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "module",
+    "keywords": [
+        "library",
+        "vue",
+        "vue3",
+        "animation",
+        "mio-animations"
+    ],
+    "main": "build/mio-animations.cjs.js",
+    "module": "build/mio-animations.esm.js",
+    "unpkg": "build/mio-animations.umd.js",
+    "exports": {
+        ".": {
+            "import": "./build/mio-animations.esm.js",
+            "require": "./build/mio-animations.cjs.js"
+        }
+    },
+    "files": [
+        "build",
+        "showcase",
+        "README.md",
+        "README.zh-CN.md",
+        "LICENSE"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TIMEdrasil/MiO-Animations.git"
+    },
+    "homepage": "https://github.com/TIMEdrasil/MiO-Animations#readme",
+    "bugs": {
+        "url": "https://github.com/TIMEdrasil/MiO-Animations/issues"
+    },
     "devDependencies": {
         "@babel/core": "^7.26.0",
         "@babel/eslint-parser": "^7.25.9",
@@ -21,10 +55,11 @@
         "@rollup/plugin-node-resolve": "^16.0.0",
         "@rollup/plugin-replace": "^6.0.2",
         "@rollup/plugin-terser": "^0.4.4",
-        "@rollup/plugin-typescript": "^12.1.2",
+        "@rollup/plugin-typescript": "^12.1.4",
         "eslint": "^9.17.0",
         "rollup": "^4.28.1",
         "rollup-plugin-serve": "^1.1.1",
-        "tslib": "^2.8.1"
+        "tslib": "^2.8.1",
+        "typescript": "^5.9.3"
     }
 }
