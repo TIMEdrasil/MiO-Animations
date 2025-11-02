@@ -1,6 +1,6 @@
 {
     "name": "@timedrasil/mio-animations",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A lightweight and high-performance animation library for the modern web, designed to create beautiful constellation effects",
     "author": {
         "name": "TIMEdrasil",
